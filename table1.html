@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>普华table</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bower_components/bootstrap-table/dist/bootstrap-table.css">
+    <link rel="stylesheet" href="css/bootstrap-editable.css">
+    <link rel="stylesheet" href="css/bootstrap-table-default.css">
+</head>
+<body>
+<div class="container-fluid">
+    <div class="container">
+        <table id="table"></table>
+    </div>
+</div>
+
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="bower_components/bootstrap-table/dist/bootstrap-table.js"></script>
+
+<script src="js/bootstrap-editable.js"></script>
+<script src="bower_components/bootstrap-table/dist/extensions/editable/bootstrap-table-editable.min.js"></script>
+
+<script src="bower_components/bootstrap-table/dist/extensions/resizable/bootstrap-table-resizable.min.js"></script>
+<script src="js/colResizable.js"></script>
+
+<script src="bower_components/bootstrap-table/dist/locale/bootstrap-table-zh-CN.js"></script>
+<script type="text/javascript">
+    $(function () {
+        $('#table').bootstrapTable({
+            idField: 'name',
+            url: 'result.json',
+            striped:true,
+            search:true,
+            //searchOnEnterKey:true,按下enter键后搜索
+            trimOnSearch:true,//去掉空格后查询
+            minimumCountColumns:1,//最少显示1列
+            searchTimeOut:500,//查询timeout时间
+            searchAlign:'right',//搜索框显示的位置
+            showHeader:true,
+            checkboxHeader:true,
+            showColumns:true,
+            showRefresh:true,//刷新按钮
+            showPaginationSwitch:true,
+            //strictSearch:true,//精确查询
+            pagination: true,
+            pageSize : 5,
+            pageList :[5,8,10],
+            paginationVAlign :'bottom',//分页文字显示的上下位置 top bottom both
+            paginationDetailHAlign :'left',//分页文字显示的左右位置 left rihgt
+            paginationPreText :'上一页',
+            paginationNextText :'下一页',
+            resizable:true,
+            //smartDisplay:true,
+            // showFooter:true,
+            //titleTooltip:"第一个table",
+            //checkboxHeader:true,
+            minWidth :15,//拖拉的最小宽度
+
+            columns: [{
+                field: 'wzbm',
+                title: '物资编码',
+                width:"80px",
+                align:"center"
+            }, {
+                field: 'productname',
+                title: '产品名称',
+                width:"250px",
+                align:"left"
+            }, {
+                field: 'tongyname',
+                title: '通用名称',
+                width:"250px",
+                align:"left"
+            }, {
+                field: 'guige',
+                title: '规格',
+                width:"160px",
+                align:"center"
+                /*editable: {
+                    type: 'textarea',
+                    placement : 'right'
+                }*/
+            },{
+                field: 'xinghao',
+                title: '型号',
+                width:"70px",
+                align:"center"
+            },{
+                field: 'danwei',
+                title: '单位',
+                width:"60px",
+                align:"center"
+            },{
+                field: 'zhaobiaojia',
+                title: '招标价',
+                width:"80px",
+                align:"center",
+                editable: {
+                    type: 'text',
+                    mode :'inlie'
+                }
+            },{
+                field: 'lingsjia',
+                title: '零售价',
+                width:"80px",
+                align:"center",
+                editable: {
+                    type: 'text',
+                    placement : 'right'
+                }
+            },{
+                field: 'baozguige',
+                title: '包装规格',
+                width:"100px",
+                align:"center"
+            },{
+                field: 'pingpai',
+                title: '品牌',
+                width:"100px",
+                align:"center"
+            },{
+                field: 'shengcshang',
+                title: '生产商',
+                width:"250px",
+                align:"left"
+            },{
+                field: 'supply',
+                title: '供应商',
+                width:"250px",
+                align:"left"
+            }
+            ]
+        });
+    });
+ /*   $('#table').bootstrapTable({
+        idField: 'name',
+        striped:true,
+        search:true,
+        //searchOnEnterKey:true,按下enter键后搜索
+        trimOnSearch:true,//去掉空格后查询
+        minimumCountColumns:1,//最少显示1列
+        searchTimeOut:500,//查询timeout时间
+        searchAlign:'right',//搜索框显示的位置
+        showHeader:true,
+        checkboxHeader:true,
+        showColumns:true,
+        showRefresh:true,//刷新按钮
+        showPaginationSwitch:true,
+        strictSearch:true,//精确查询
+        pagination: true,
+        //smartDisplay:true,
+       // showFooter:true,
+        //titleTooltip:"第一个table",
+        //checkboxHeader:true,
+        columns: [{
+            field: 'id',
+            title: 'ID',
+            sortable:true,
+            formatter:"nameFormatter",
+            editable: {
+                type: 'text'
+            }
+        }, {
+            field: 'name',
+            title: '产品名称',
+            editable: {
+                type: 'text'
+            }
+        }, {
+            field: 'price',
+            title: '产品价格',
+            editable: {
+                type: 'text'
+            }
+        }],
+        data: [{
+            id: 1,
+            name: '产品1',
+            price: '$1'
+        }, {
+            id: 2,
+            name: '产品2',
+            price: '$2'
+        }],
+        detailFormatter:function(index,row){
+            return "这是第"+index+"行";
+        }
+    });
+
+    function nameFormatter(value) {
+        return '<a href="https://github.com/wenzhixin/' + value + '">' + value + '</a>';
+    }*/
+</script>
+</body>
+</html>

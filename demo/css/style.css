@@ -1,0 +1,39 @@
+html,body{height: 100%;}
+.pxhl-wrapper{position: absolute;left: 0;right: 0;top: 0;bottom: 0;}
+.phxl-header{position:absolute;left: 0;right: 0; }
+.phxl-header{height: 45px;top: 0;background-color: #2778b5;}
+.phxl-aside{width: 185px;position: absolute;top:45px;bottom:0;left: 0;background-color: #fafafa;}
+.phxl-content{position: absolute;left: 190px;right:1px;top: 50px;bottom:0;overflow:auto;}
+
+/*header*/
+.phxl-header .top{width: 100%;height: 45px; line-height: 45px;}
+.phxl-header .top-right a{color: #ffffff;}
+.phxl-header .top-right a:hover{color: #f0ad4e;}
+
+/*aside*/
+.nav-sidebar{width: 100%;height: 100%;}
+/*bootstrap中修改*/
+.nav-sidebar .panel-title{font-size: 12px;}
+.nav-sidebar .panel-heading{padding: 8px 10px;}
+.nav-sidebar .panel-group{margin-bottom: 5px;}
+.nav-sidebar .panel-group .panel + .panel{ margin-top: 0;border-top:none; }
+.nav-sidebar .panel-group .panel{border-radius: 0;}
+.nav-sidebar .panel{border-radius: 0;}
+.nav-sidebar .panel-body{padding-left: 0;padding-top: 0; padding-bottom: 0;padding-right: 0;overflow: auto}
+.nav-sidebar .list-group{margin: 0;overflow-y:auto;max-height: 330px;}
+.nav-sidebar .list-group-item{border-left: none; border-right: none; padding: 8px 20px;}
+.nav-sidebar .list-group-item:first-child{border-top: none;border-top-left-radius: 0;  border-top-right-radius: 0; }
+.nav-sidebar .list-group-item:last-child{border-bottom: none;}
+.nav-sidebar .panel-title > a{color: #555555;}
+.nav-sidebar .list-group-item.active{}
+.nav-sidebar .list-group-item.active a{color: #ffffff;text-decoration: none;}
+/*end bootstrap中修改*/
+
+/*中间部分*/
+.phxl-content .mainFrame{width: 100%; height: 100%;}
+.phxl-content .mainFrame .nav > li > a{padding: 5px 8px;}
+.phxl-content .mainFrame .nav > li > a:hover{background-color: #ffffff;border: 1px solid #2778b5;}
+.phxl-content .mainFrame .nav-tabs{border-color: #2778b5;}
+.phxl-content .mainFrame .nav-tabs > li.active > a{border: 1px solid #2778b5;}
+.phxl-content .mainFrame  .tab-content{border: 1px solid #dddddd;border-top:none; height:95%;}
+
